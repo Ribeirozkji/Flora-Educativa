@@ -206,7 +206,76 @@
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+@media (max-width: 768px) {
+  .navbar .container {
+    flex-direction: column;
+    gap: 15px;
+  }
 
+  .navbar-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+
+  #quiz-container {
+    padding: 20px;
+    max-width: 100%;
+    margin: 0 10px;
+  }
+
+  .quiz-question {
+    font-size: 1.3rem;
+  }
+
+  .quiz-option {
+    font-size: 0.9rem;
+    padding: 12px 16px;
+  }
+
+  .button.primary {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar .container {
+    padding: 0 10px;
+  }
+
+  .navbar-logo {
+    font-size: 1.3rem;
+  }
+
+  .leaf-icon {
+    font-size: 1.1rem;
+  }
+
+  .nav-link {
+    font-size: 0.85rem;
+  }
+
+  .quiz-question {
+    font-size: 1.1rem;
+  }
+
+  .quiz-option {
+    font-size: 0.85rem;
+    padding: 10px 14px;
+  }
+
+  .button.primary {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 1rem;
+  }
+}
     </style>
   <header class="navbar">
     <div class="container">
