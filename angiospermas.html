@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Angiospermas | Flora Educativa</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+       <style>
+        
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  background-color: #f5fdf7;
+  color: #2e4639;
+  line-height: 1.6;
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+.navbar {
+  background-color: #d6ecd7;
+  border-bottom: 2px solid #b4d7b9;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.navbar-logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #2e4639;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.leaf-icon {
+  margin-right: 8px;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #2e4639;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #1b3127;
+  border-bottom: 2px solid #3f7c4f;
+  padding-bottom: 5px;
+}
+
+
+.hero {
+  background: linear-gradient(135deg, #c5e8c7, #e8f5e9);
+  padding: 60px 20px;
+  text-align: center;
+  border-bottom: 2px solid #c4e1c6;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
+.info-section {
+  padding: 50px 20px;
+}
+
+.info-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.info-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 40px;
+}
+
+.info-list li {
+  background: #eaf8ec;
+  border-left: 5px solid #7fc88e;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #cde8d1;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(45, 90, 60, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+
+.cta {
+  background-color: #b4e0bb;
+  text-align: center;
+  padding: 40px 20px;
+  border-top: 2px solid #96c59a;
+}
+
+.cta h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.button.primary {
+  background-color: #3f7c4f;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.button.primary:hover {
+  background-color: #2e5f3b;
+}
+
+
+.footer {
+  background-color: #d6ecd7;
+  padding: 20px;
+  text-align: center;
+  border-top: 2px solid #b4d7b9;
+}
+
+.footer-logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+
+@media (max-width: 768px) {
+  .navbar-content,
+  .navbar-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-link {
+    margin: 10px 0 0 0;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .cta h2 {
+    font-size: 1.5rem;
+  }
+}
+
+    </style>
+  <header class="navbar">
+    <div class="container">
+      <div class="navbar-content">
+        <a href="index.html" class="navbar-logo">
+          <span class="leaf-icon">🌿</span>
+          <span>Flora Educativa</span>
+        </a>
+        <nav class="navbar-nav">
+          <a href="index.html" class="nav-link">Início</a>
+          <a href="briofitas.html" class="nav-link">Briófitas</a>
+          <a href="pteridofitas.html" class="nav-link">Pteridófitas</a>
+          <a href="gimnospermas.html" class="nav-link">Gimnospermas</a>
+          <a href="angiospermas.html" class="nav-link active">Angiospermas</a>
+          <a href="quiz.html" class="nav-link">Quiz</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Angiospermas</h1>
+        <p>As angiospermas são as plantas mais evoluídas e diversas do planeta. Produzem flores e frutos, dominando a maioria dos ecossistemas terrestres.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="info-section">
+    <div class="container">
+      <h2>Características Gerais</h2>
+      <ul class="info-list">
+        <li>Possuem flores, que são estruturas reprodutivas especializadas.</li>
+        <li>Produzem frutos que protegem as sementes.</li>
+        <li>São vasculares com xilema e floema bem desenvolvidos.</li>
+        <li>Reprodução independente da água (uso de polinizadores e vento).</li>
+        <li>Grande variedade de formas, tamanhos e ambientes.</li>
+      </ul>
+
+      <h2>Exemplos Comuns</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Roseira</h3>
+          <p>Exemplo clássico de planta com flores vistosas, utilizada como ornamental.</p>
+        </div>
+        <div class="card">
+          <h3>Maçã</h3>
+          <p>Fruto comestível produzido por angiospermas cultivadas em pomares.</p>
+        </div>
+        <div class="card">
+          <h3>Ipê</h3>
+          <p>Árvore nativa do Brasil com florada exuberante, símbolo da biodiversidade tropical.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Finalize sua jornada com um desafio!</h2>
+      <a href="quiz.html" class="button primary">Ir para o Quiz</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="leaf-icon">🌿</span>
+          <span>Flora Educativa</span>
+        </div>
+        <p>© 2025 - Um projeto educativo sobre botânica</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

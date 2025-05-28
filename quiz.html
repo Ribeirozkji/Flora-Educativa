@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz | Flora Educativa</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <style>
+       .navbar {
+  background: linear-gradient(90deg, #e3f9e5, #d0f5da);
+  padding: 15px 0;
+  border-bottom: 1px solid #bfe6c9;
+  box-shadow: 0 4px 8px rgba(0, 50, 0, 0.03);
+  font-family: 'Nunito', sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #256a45;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+}
+
+.leaf-icon {
+  font-size: 1.3rem;
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-link {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #2f593c;
+  text-decoration: none;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #3e8b60;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #3e8b60;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: #2a9d6a;
+}
+
+.nav-link.active::after {
+  width: 100%;
+  background-color: #2a9d6a;
+}
+
+#quiz-container {
+  background: #f2fdf4;
+  border: 3px solid #d0f0d4;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  max-width: 800px;
+  margin: 0 auto;
+  animation: fadeIn 0.8s ease-in-out;
+  font-family: 'Nunito', sans-serif;
+}
+
+.quiz-question {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2e5d3c;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.quiz-option {
+  background: #e6f7eb;
+  border: 2px solid #c3e6d2;
+  border-radius: 12px;
+  padding: 14px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #2d4833;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(60, 179, 113, 0.05);
+  text-align: left;
+}
+
+.quiz-option:hover {
+  background: #d4f1dd;
+  border-color: #a7ddbd;
+  transform: scale(1.02);
+}
+
+.quiz-option.correct {
+  background-color: #c6f4cc;
+  border-color: #81d999;
+  color: #1e3d29;
+  position: relative;
+}
+
+.quiz-option.correct::after {
+  content: "✔";
+  position: absolute;
+  right: 20px;
+  font-size: 1.2rem;
+  color: #257a3e;
+}
+
+.quiz-option.wrong {
+  background-color: #f8d7da;
+  border-color: #f5c2c7;
+  color: #842029;
+  position: relative;
+}
+
+.quiz-option.wrong::after {
+  content: "✖";
+  position: absolute;
+  right: 20px;
+  font-size: 1.2rem;
+  color: #842029;
+}
+
+.button.primary {
+  background-color: #50b87f;
+  color: white;
+  padding: 12px 26px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(80, 184, 127, 0.3);
+  transition: background 0.3s, transform 0.2s;
+  display: block;
+  margin: 0 auto;
+}
+
+.button.primary:hover {
+  background-color: #3e9f6d;
+  transform: translateY(-2px);
+}
+
+.quiz-result {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #236a46;
+  text-align: center;
+  margin-top: 20px;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+    </style>
+  <header class="navbar">
+    <div class="container">
+      <div class="navbar-content">
+        <a href="index.html" class="navbar-logo">
+          <span class="leaf-icon">🌿</span>
+          <span>Flora Educativa</span>
+        </a>
+        <nav class="navbar-nav">
+          <a href="index.html" class="nav-link">Início</a>
+          <a href="briofitas.html" class="nav-link">Briófitas</a>
+          <a href="pteridofitas.html" class="nav-link">Pteridófitas</a>
+          <a href="gimnospermas.html" class="nav-link">Gimnospermas</a>
+          <a href="angiospermas.html" class="nav-link">Angiospermas</a>
+          <a href="quiz.html" class="nav-link active">Quiz</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Quiz do Reino Vegetal</h1>
+        <p>Teste seus conhecimentos sobre os principais grupos de plantas!</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="info-section">
+    <div class="container">
+      <div id="quiz-container">
+        <div class="quiz-question" id="question">Carregando pergunta...</div>
+        <div class="quiz-options" id="options"></div>
+        <button id="next-btn" class="button primary" style="display: none;">Próxima</button>
+        <div id="result" class="quiz-result"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="leaf-icon">🌿</span>
+          <span>Flora Educativa</span>
+        </div>
+        <p>© 2025 - Um projeto educativo sobre botânica</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const questions = [
+      {
+        question: "Qual grupo vegetal não possui vasos condutores?",
+        options: ["Briófitas", "Pteridófitas", "Gimnospermas", "Angiospermas"],
+        answer: "Briófitas"
+      },
+      {
+        question: "As samambaias pertencem a qual grupo?",
+        options: ["Gimnospermas", "Pteridófitas", "Angiospermas", "Briófitas"],
+        answer: "Pteridófitas"
+      },
+      {
+        question: "Qual característica é exclusiva das angiospermas?",
+        options: ["Presença de sementes", "Produção de frutos", "Esporos", "Falta de flores"],
+        answer: "Produção de frutos"
+      },
+      {
+        question: "As gimnospermas se reproduzem por:",
+        options: ["Esporos", "Frutos", "Sementes nuas", "Flores coloridas"],
+        answer: "Sementes nuas"
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    const questionEl = document.getElementById("question");
+    const optionsEl = document.getElementById("options");
+    const nextBtn = document.getElementById("next-btn");
+    const resultEl = document.getElementById("result");
+
+    function showQuestion(index) {
+      const q = questions[index];
+      questionEl.textContent = q.question;
+      optionsEl.innerHTML = "";
+      resultEl.textContent = "";
+
+      q.options.forEach(option => {
+        const btn = document.createElement("button");
+        btn.classList.add("quiz-option");
+        btn.textContent = option;
+        btn.onclick = () => checkAnswer(option, q.answer);
+        optionsEl.appendChild(btn);
+      });
+    }
+
+    function checkAnswer(selected, correct) {
+      const buttons = document.querySelectorAll(".quiz-option");
+      buttons.forEach(btn => {
+        btn.disabled = true;
+        if (btn.textContent === correct) {
+          btn.classList.add("correct");
+        }
+        if (btn.textContent === selected && selected !== correct) {
+          btn.classList.add("wrong");
+        }
+      });
+
+      if (selected === correct) {
+        score++;
+      }
+
+      nextBtn.style.display = "inline-block";
+    }
+
+    nextBtn.onclick = () => {
+      currentQuestion++;
+      if (currentQuestion < questions.length) {
+        showQuestion(currentQuestion);
+        nextBtn.style.display = "none";
+      } else {
+        showResult();
+      }
+    };
+
+    function showResult() {
+      questionEl.textContent = "Você concluiu o quiz!";
+      optionsEl.innerHTML = "";
+      nextBtn.style.display = "none";
+      resultEl.innerHTML = `<strong>Acertos:</strong> ${score} de ${questions.length}`;
+    }
+
+    showQuestion(currentQuestion);
+  </script>
+</body>
+</html>
