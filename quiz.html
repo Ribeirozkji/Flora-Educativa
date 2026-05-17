@@ -5,279 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Quiz | Flora Educativa</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <style>
-       .navbar {
-  background: linear-gradient(90deg, #e3f9e5, #d0f5da);
-  padding: 15px 0;
-  border-bottom: 1px solid #bfe6c9;
-  box-shadow: 0 4px 8px rgba(0, 50, 0, 0.03);
-  font-family: 'Nunito', sans-serif;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.navbar .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.navbar-logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #256a45;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: transform 0.2s ease;
-}
-
-.navbar-logo:hover {
-  transform: scale(1.05);
-}
-
-.leaf-icon {
-  font-size: 1.3rem;
-}
-
-.navbar-nav {
-  display: flex;
-  gap: 25px;
-}
-
-.nav-link {
-  font-weight: 600;
-  font-size: 1rem;
-  color: #2f593c;
-  text-decoration: none;
-  position: relative;
-  padding: 5px 0;
-  transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-  color: #3e8b60;
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  background-color: #3e8b60;
-  bottom: 0;
-  left: 0;
-  transition: width 0.3s ease;
-}
-
-.nav-link:hover::after {
-  width: 100%;
-}
-
-.nav-link.active {
-  color: #2a9d6a;
-}
-
-.nav-link.active::after {
-  width: 100%;
-  background-color: #2a9d6a;
-}
-
-#quiz-container {
-  background: #f2fdf4;
-  border: 3px solid #d0f0d4;
-  border-radius: 20px;
-  padding: 30px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  max-width: 800px;
-  margin: 0 auto;
-  animation: fadeIn 0.8s ease-in-out;
-  font-family: 'Nunito', sans-serif;
-}
-
-.quiz-question {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #2e5d3c;
-  margin-bottom: 25px;
-  text-align: center;
-}
-
-.quiz-options {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-bottom: 30px;
-  animation: fadeInUp 0.6s ease forwards;
-}
-
-.quiz-option {
-  background: #e6f7eb;
-  border: 2px solid #c3e6d2;
-  border-radius: 12px;
-  padding: 14px 20px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  color: #2d4833;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(60, 179, 113, 0.05);
-  text-align: left;
-}
-
-.quiz-option:hover {
-  background: #d4f1dd;
-  border-color: #a7ddbd;
-  transform: scale(1.02);
-}
-
-.quiz-option.correct {
-  background-color: #c6f4cc;
-  border-color: #81d999;
-  color: #1e3d29;
-  position: relative;
-}
-
-.quiz-option.correct::after {
-  content: "✔";
-  position: absolute;
-  right: 20px;
-  font-size: 1.2rem;
-  color: #257a3e;
-}
-
-.quiz-option.wrong {
-  background-color: #f8d7da;
-  border-color: #f5c2c7;
-  color: #842029;
-  position: relative;
-}
-
-.quiz-option.wrong::after {
-  content: "✖";
-  position: absolute;
-  right: 20px;
-  font-size: 1.2rem;
-  color: #842029;
-}
-
-.button.primary {
-  background-color: #50b87f;
-  color: white;
-  padding: 12px 26px;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 6px 12px rgba(80, 184, 127, 0.3);
-  transition: background 0.3s, transform 0.2s;
-  display: block;
-  margin: 0 auto;
-}
-
-.button.primary:hover {
-  background-color: #3e9f6d;
-  transform: translateY(-2px);
-}
-
-.quiz-result {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #236a46;
-  text-align: center;
-  margin-top: 20px;
-  animation: fadeIn 0.6s ease-in-out;
-}
-
-
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@media (max-width: 768px) {
-  .navbar .container {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .navbar-nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-  }
-
-  .nav-link {
-    font-size: 0.9rem;
-    padding: 8px 12px;
-  }
-
-  #quiz-container {
-    padding: 20px;
-    max-width: 100%;
-    margin: 0 10px;
-  }
-
-  .quiz-question {
-    font-size: 1.3rem;
-  }
-
-  .quiz-option {
-    font-size: 0.9rem;
-    padding: 12px 16px;
-  }
-
-  .button.primary {
-    padding: 10px 20px;
-    font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .navbar .container {
-    padding: 0 10px;
-  }
-
-  .navbar-logo {
-    font-size: 1.3rem;
-  }
-
-  .leaf-icon {
-    font-size: 1.1rem;
-  }
-
-  .nav-link {
-    font-size: 0.85rem;
-  }
-
-  .quiz-question {
-    font-size: 1.1rem;
-  }
-
-  .quiz-option {
-    font-size: 0.85rem;
-    padding: 10px 14px;
-  }
-
-  .button.primary {
-    width: 100%;
-    padding: 12px 0;
-    font-size: 1rem;
-  }
-}
-    </style>
-  <header class="navbar">
+<header class="navbar">
     <div class="container">
       <div class="navbar-content">
         <a href="index.html" class="navbar-logo">
@@ -329,29 +60,7 @@
   </footer>
 
   <script>
-    const questions = [
-      {
-        question: "Qual grupo vegetal não possui vasos condutores?",
-        options: ["Briófitas", "Pteridófitas", "Gimnospermas", "Angiospermas"],
-        answer: "Briófitas"
-      },
-      {
-        question: "As samambaias pertencem a qual grupo?",
-        options: ["Gimnospermas", "Pteridófitas", "Angiospermas", "Briófitas"],
-        answer: "Pteridófitas"
-      },
-      {
-        question: "Qual característica é exclusiva das angiospermas?",
-        options: ["Presença de sementes", "Produção de frutos", "Esporos", "Falta de flores"],
-        answer: "Produção de frutos"
-      },
-      {
-        question: "As gimnospermas se reproduzem por:",
-        options: ["Esporos", "Frutos", "Sementes nuas", "Flores coloridas"],
-        answer: "Sementes nuas"
-      }
-    ];
-
+    let questions = [];
     let currentQuestion = 0;
     let score = 0;
 
@@ -359,6 +68,13 @@
     const optionsEl = document.getElementById("options");
     const nextBtn = document.getElementById("next-btn");
     const resultEl = document.getElementById("result");
+
+    async function loadQuestions() {
+      const response = await fetch("quiz-data.json");
+      if (!response.ok) throw new Error("Falha ao carregar perguntas");
+      questions = await response.json();
+      showQuestion(currentQuestion);
+    }
 
     function showQuestion(index) {
       const q = questions[index];
@@ -369,6 +85,7 @@
       q.options.forEach(option => {
         const btn = document.createElement("button");
         btn.classList.add("quiz-option");
+        btn.type = "button";
         btn.textContent = option;
         btn.onclick = () => checkAnswer(option, q.answer);
         optionsEl.appendChild(btn);
@@ -381,9 +98,11 @@
         btn.disabled = true;
         if (btn.textContent === correct) {
           btn.classList.add("correct");
+          btn.setAttribute("aria-label", `${btn.textContent} - resposta correta`);
         }
         if (btn.textContent === selected && selected !== correct) {
           btn.classList.add("wrong");
+          btn.setAttribute("aria-label", `${btn.textContent} - resposta incorreta`);
         }
       });
 
@@ -411,7 +130,11 @@
       resultEl.innerHTML = `<strong>Acertos:</strong> ${score} de ${questions.length}`;
     }
 
-    showQuestion(currentQuestion);
+    loadQuestions().catch(() => {
+      questionEl.textContent = "Não foi possível carregar o quiz.";
+      optionsEl.innerHTML = "";
+      nextBtn.style.display = "none";
+    });
   </script>
 </body>
 </html>
