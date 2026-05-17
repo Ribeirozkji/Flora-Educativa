@@ -1,0 +1,22 @@
+[
+  {
+    "question": "Qual grupo vegetal não possui vasos condutores?",
+    "options": ["Briófitas", "Pteridófitas", "Gimnospermas", "Angiospermas"],
+    "answer": "Briófitas"
+  },
+  {
+    "question": "As samambaias pertencem a qual grupo?",
+    "options": ["Gimnospermas", "Pteridófitas", "Angiospermas", "Briófitas"],
+    "answer": "Pteridófitas"
+  },
+  {
+    "question": "Qual característica é exclusiva das angiospermas?",
+    "options": ["Presença de sementes", "Produção de frutos", "Esporos", "Falta de flores"],
+    "answer": "Produção de frutos"
+  },
+  {
+    "question": "As gimnospermas se reproduzem por:",
+    "options": ["Esporos", "Frutos", "Sementes nuas", "Flores coloridas"],
+    "answer": "Sementes nuas"
+  }
+]
